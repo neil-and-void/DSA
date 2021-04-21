@@ -121,7 +121,8 @@ def coinChangeOPTION_ONE(coins, amount):
 very slight optimization of the above solution,
     instead of setting the default values of the array to 0
     set them to infinity and check if possible to make amount at the
-    last step
+    last step. And for each step, if we find that we aren't able
+    to find a value lower than inf, that there was no value being able to find
 '''
 def coinChange(coins: List[int], amount: int) -> int:
     # base cases #
