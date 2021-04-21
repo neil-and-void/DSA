@@ -1,2 +1,2 @@
 # DSA
-Leetcode practice problems and solutions
+Competitive programming practice problems, solutions and notes
