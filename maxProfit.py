@@ -1,5 +1,4 @@
 '''
-
 def maxProfit(prices):
     base = 0
     price = 1
@@ -28,7 +27,10 @@ def maxProfit(prices):
 
     return profit
 
-prices = [7,6,4,3,1]
-res = maxProfit(prices)
-print(res)
+import random
+
+prices = [random.randint(200,500) for i in range(150)]
+print(prices)
+ans = maxProfit(prices)
+print(ans)
 

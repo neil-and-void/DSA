@@ -1,6 +1,6 @@
 def canAttendMeetings(intervals):
     n = len(intervals)
-    intervals = sorted(intervals, key=lambda interval: interval[0])
+    intervals = sorted(intervals, key = lambda interval: interval[0])
 
     for i in range(n-1):
         if intervals[i][1] > intervals[i+1][0]:

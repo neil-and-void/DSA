@@ -1,34 +1,35 @@
-def search(target, array, lo):
-    hi = len(array) - 1
+def binarySearch(arr, target):
+    '''
+    get middle element
+    if middle element is target
+        return index
+    if target is greater than middle
+        search right
+    if target is less than middle
+        search right
+    if serach boundaries cross
+        return -1
+    '''
+    lo = 0
+    hi = len(arr) - 1
 
     while lo <= hi:
-        mid = lo + (hi - lo) // 2
+        mid = lo + ((hi - lo) // 2)
 
-        if array[mid] == target:
+        if arr[mid] == target:
             return mid
 
-        if target < array[mid]:
+        if target < arr[mid]:
             hi = mid - 1
 
-        elif array[mid] < target:
+        if arr[mid] < target:
             lo = mid + 1
     return -1
 
-def twoSum(numbers, target):
-    for i in range(len(numbers)):
-        complement = target - numbers[i]
-        complementIndex = search(complement, numbers, i + 1)
+arr = [1,3,4,5,6,8,12,14,15,18,20,21]
 
-        if complementIndex != -1:
-            return [i + 1, complementIndex + 1]
-
-def main():
-    a = [-1, 0]
-    t = -1
-    result = twoSum(a, t)
-    print(result)
-
-
-if __name__ == '__main__':
-    main()
+target = 15
+ans = binarySearch(arr, target)
+print(ans)
+print(arr[ans] == target)
 
