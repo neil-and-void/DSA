@@ -48,6 +48,6 @@ def climbStairs(n):
         uniqueClimbs[i] = uniqueClimbs[i-1] + uniqueClimbs[i-2]
     return uniqueClimbs[n]
 
-n = 6
+n = 18
 res = climbStairs(n)
 print(res)
