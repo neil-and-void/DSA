@@ -14,15 +14,8 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def buildTree(preorder, inorder):
-    pass
-
-def inorderPrint(root):
-    if root:
-        inorderPrint(root.left)
-        print(root.val)
-        inorderPrint(root.right)
-
+class Solution:
+    i = 0
 pre = [3,9,20,15,7]
 inord = [9,3,15,20,7]
 root = buildTree(pre, inord)

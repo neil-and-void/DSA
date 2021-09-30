@@ -7,14 +7,35 @@ idea 1: go through list from right to left and if current is biggert than next, 
 '''
 def nextPermutation(nums):
     n = len(nums)
-    for i in range(n-1, 0, -1):
-        if nums[i - 1] < nums[i]:
-            temp = nums[i - 1]
-            nums[i - 1] = nums[i]
-            nums[i] = temp
-            return
 
-nums = [5,1,4,2,3]
+    decreasing = -1
+    for i in range(n-1, 0, -1):
+        if nums[i-1] < nums[i]:
+            decreasing = i-1
+            break
+
+    minBiggest = 0
+    for i in range(n-1, -1, -1):
+        if nums[decreasing] < nums[i]:
+            minBiggest = i
+            break
+
+    # swap 
+    temp = nums[decreasing]
+    nums[decreasing] = nums[minBiggest]
+    nums[minBiggest] = temp
+
+    decreasingSubarrayLen = n - decreasing - 1
+    for i in range(decreasingSubarrayLen // 2):
+        temp = nums[decreasing + 1 + i]
+        nums[decreasing + 1 + i] = nums[n - i - 1]
+        nums[n - i - 1] = temp
+
+
+
+nums = [1,3,5,4,2]
+print(nums)
+print('###')
 nextPermutation(nums)
 print(nums)
 

@@ -13,7 +13,7 @@ def permuteRec(nums, candidateList, candidateSet, ansList):
             append to end of candidate list
             add to candidate set
             recurse()
-            pop from candidate set 
+            pop from candidate set
             pop from end of list
 '''
 def permute(nums):
